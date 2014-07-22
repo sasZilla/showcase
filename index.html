@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Тестовое задание для GD</title>
+		<link rel="stylesheet" href="assets/stylesheets/reset.css" />
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="assets/stylesheets/css.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+
+	<body>
+		<div class="main">
+			<header>
+				<div class="coll">
+					<img src="logo-small.png">
+				</div>
+				<div class="coll">
+					<h1 class="header__title">DailyGoods</h1>
+				</div>
+			</header>
+			<section id="catalog"></section>
+			<footer class="footer">
+				<div class="coll footer_right">Тестовое задание для GD</div>
+			</footer>
+		</div>
+
+		<script type="text/html" id="goodsTmpl">
+			<% for (var i = 0, len = goods.length; i < len; i++) { %>
+				<% var product = goods[i]; %>
+				<div data-id="<%=product.id%>" class="product">
+					<div class="coll">
+						<img src="<%=product.imgThumb%>" class="productThumb">
+					</div>
+					<div class="coll">
+						<div class="title"><%=product.name%></div>
+						<div class="desc"><%=product.descrSmall%></div>
+					</div>
+				</div>
+			<% } %>
+		</script>
+
+		<script type="text/html" id="fullDescTmpl">
+			<div class="modal">
+				<h3><%=product.name%></h3>
+				<div><%=product.descLarge%></div>
+				<img src="<%=product.imgLarge%>" class="modal__img">
+			</div>
+		</script>
+
+		<script src="assets/javascripts/jquery-2.1.0.min.js"></script>
+		<script src="assets/javascripts/js.js"></script>
+	</body>
+</html>
