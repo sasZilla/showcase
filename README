@@ -8,3 +8,18 @@
 При клике на картинку товара будет всплывать модальный диалог с большой картинкой товара и расширенным описанием товара. Окно должно закрываться по Escape или двойному клику по нему.
 
 Данные для товаров (название, кратное описание, расширенное описание, ссылка на маленькую картинку, ссылка на большую картинку) хранятся в формате JSON и получаются с сервера через AJAX запрос.
+
+
+
+===================================== Start ============================================================================
+Chrome and Safari has a restriction on using ajax with local resources. That's why it's throwing an error like
+
+Origin null is not allowed by Access-Control-Allow-Origin.
+
+Solution: Use firefox or upload your data to a temporary server. If you still want to use Chrome, start web server;
+
+cd path\to\project
+python -m SimpleHTTPServer 8000
+
+In brouser goto localhost:8000 url
+========================================================================================================================
